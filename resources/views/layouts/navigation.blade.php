@@ -76,6 +76,12 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('todos.index')" :active="request()->routeIs('todos.index')">
+                {{ __('Todos') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('todos.completed')" :active="request()->routeIs('todos.completed')">
+                {{ __('Completed Todos') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
