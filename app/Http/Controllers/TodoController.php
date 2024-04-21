@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Todo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class TodoController extends Controller
 {
@@ -48,6 +49,8 @@ class TodoController extends Controller
 
     public function complete(Todo $todo)
     {
+        Gate::authorize('delete-todo', $todo);
+
         $todo->completed = true;
         $todo->save();
 
@@ -84,6 +87,8 @@ class TodoController extends Controller
      */
     public function destroy(Todo $todo)
     {
+        Gate::authorize('delete-todo', $todo);
+
         $todo->delete();
 
         return to_route('todos.completed');

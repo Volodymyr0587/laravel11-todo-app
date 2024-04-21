@@ -36,11 +36,8 @@
                                     @csrf
                                     @method('PUT')
                                     <button type="submit"
-                                        class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-white text-green border-green hover:bg-green">Done</button>
+                                        class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-blue-500">Done</button>
                                 </form>
-
-                                <button
-                                    class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red">Remove</button>
                             </div>
                             @empty
                             <div class="flex mb-4 items-center">No Todos Yet.</div>

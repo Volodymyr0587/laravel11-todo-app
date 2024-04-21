@@ -19,8 +19,8 @@
                                 <form action="{{ route('todos.destroy', $todo) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit"
-                                        class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-white text-green border-green hover:bg-green">Delete</button>
+                                    <button type="submit" onclick="return confirm('Are you sure?')"
+                                        class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-red-700 text-red-500 border-green hover:bg-green">Delete</button>
                                 </form>
                             </div>
                             @empty
