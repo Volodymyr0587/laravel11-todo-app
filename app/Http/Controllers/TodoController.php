@@ -69,17 +69,27 @@ class TodoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Todo $todo)
     {
-        //
+        Gate::authorize('delete-todo', $todo);
+
+        return view('todos.edit', compact('todo'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Todo $todo)
     {
-        //
+        Gate::authorize('delete-todo', $todo);
+        //% validate
+        $attributes = $request->validate([
+            'description' => ['required', 'min:2', 'max:255'],
+        ]);
+
+        $todo->update($attributes);
+
+        return to_route('todos.index');
     }
 
     /**

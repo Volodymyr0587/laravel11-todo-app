@@ -38,6 +38,7 @@
                                     <button type="submit"
                                         class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-blue-500">Done</button>
                                 </form>
+                                <a href="{{ route('todos.edit', $todo) }}" class="flex-no-shrink p-2 border-2 rounded text-teal border-teal hover:text-blue-500 hover:bg-teal">Edit</a>
                             </div>
                             @empty
                             <div class="flex mb-4 items-center">No Todos Yet.</div>
