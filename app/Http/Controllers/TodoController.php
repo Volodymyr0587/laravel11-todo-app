@@ -16,6 +16,13 @@ class TodoController extends Controller
         return view('todos.index', compact('todos'));
     }
 
+    public function completed()
+    {
+        $todos = auth()->user()->todos()->where('completed', true)->orderBy('created_at', 'desc')->get();
+        return view('todos.completed', compact('todos'));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      */
@@ -75,8 +82,10 @@ class TodoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Todo $todo)
     {
-        //
+        $todo->delete();
+
+        return to_route('todos.completed');
     }
 }

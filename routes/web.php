@@ -20,8 +20,10 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/todos', [TodoController::class, 'index'])->name('todos.index');
+    Route::get('/todos/completed', [TodoController::class, 'completed'])->name('todos.completed');
     Route::post('/todos', [TodoController::class, 'store'])->name('todos.store');
     Route::put('/todos/{todo}', [TodoController::class, 'complete'])->name('todos.complete');
+    Route::delete('/todos/{todo}', [TodoController::class, 'destroy'])->name('todos.destroy');
 });
 
 require __DIR__.'/auth.php';

@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('todos.index')" :active="request()->routeIs('todos.index')">
                         {{ __('Todos') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('todos.completed')" :active="request()->routeIs('todos.completed')">
+                        {{ __('Completed Todos') }}
+                    </x-nav-link>
                 </div>
             </div>
 
