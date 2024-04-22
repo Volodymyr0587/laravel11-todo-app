@@ -16,6 +16,7 @@
                             @forelse ($todos as $todo)
                             <div class="flex mb-4 items-center">
                                 <p class="w-full text-grey-darkest">{{ $todo->description }}</p>
+                                <p class="text-sm font-bold italic">Completed at {{ $todo->updated_at }}</p>
                                 <form action="{{ route('todos.destroy', $todo) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
