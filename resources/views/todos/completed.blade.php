@@ -20,7 +20,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" onclick="return confirm('Are you sure?')"
-                                        class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-red-700 text-red-500 border-green hover:bg-green">Delete</button>
+                                        class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-red-500 hover:bg-red-700 text-white shadow-md shadow-red-900/10 hover:shadow-lg hover:shadow-red-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none">Delete</button>
                                 </form>
                             </div>
                             @empty
