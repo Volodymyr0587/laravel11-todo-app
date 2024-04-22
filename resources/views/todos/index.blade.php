@@ -45,12 +45,15 @@
                                     </form>
                                     <a href="{{ route('todos.edit', $todo) }}" class="flex-no-shrink p-2 border-2 rounded text-teal border-teal hover:text-blue-500 hover:bg-teal">Edit</a>
                                 </div>
-
                             </div>
                             @empty
                             <div class="flex mb-4 items-center">No Todos Yet.</div>
                             @endforelse
 
+                        </div>
+
+                        <div>
+                            {{ $todos->links() }}
                         </div>
                     </div>
                 </div>
