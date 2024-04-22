@@ -5,16 +5,16 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-2">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="p-6 text-gray-900">
 
                 <!-- component -->
                 <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
-                    <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+                    <div class=" p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
                         <div>
                             @forelse ($todos as $todo)
-                            <div class="flex mb-4 items-center">
+                            <div class="flex items-center bg-white rounded shadow p-6 m-4">
                                 <p class="w-full text-grey-darkest">{{ $todo->description }}</p>
                                 <p class="text-sm font-bold italic">Completed at {{ $todo->updated_at }}</p>
                                 <form action="{{ route('todos.destroy', $todo) }}" method="POST">
@@ -28,6 +28,9 @@
                             <div class="flex mb-4 items-center">No Completed Todos Yet.</div>
                             @endforelse
 
+                        </div>
+                        <div class="mt-4">
+                            {{ $todos->links() }}
                         </div>
                     </div>
                 </div>
