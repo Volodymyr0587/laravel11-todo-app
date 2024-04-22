@@ -44,6 +44,8 @@ class TodoController extends Controller
 
         auth()->user()->todos()->create($attributes);
 
+        toastr()->info('Todo has been created successfully!', 'Congrats');
+
         return to_route('todos.index');
     }
 
@@ -53,6 +55,8 @@ class TodoController extends Controller
 
         $todo->completed = true;
         $todo->save();
+
+        toastr()->success('Todo has been completed successfully!', 'Congrats');
 
         return to_route('todos.index');
 
@@ -89,6 +93,8 @@ class TodoController extends Controller
 
         $todo->update($attributes);
 
+        toastr()->info('Todo has been updated successfully!', 'Congrats');
+
         return to_route('todos.index');
     }
 
@@ -100,6 +106,8 @@ class TodoController extends Controller
         Gate::authorize('delete-todo', $todo);
 
         $todo->delete();
+
+        toastr()->success('Todo has been deleted successfully!', 'Congrats');
 
         return to_route('todos.completed');
     }
