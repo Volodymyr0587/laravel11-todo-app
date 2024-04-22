@@ -10,8 +10,7 @@
             <div class="p-6 text-gray-900">
 
                 <!-- component -->
-                <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
-                    <div class=" p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+                <d class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
                         <div>
                             @forelse ($todos as $todo)
                             <div class="flex items-center bg-white rounded shadow p-6 m-4">
@@ -32,7 +31,6 @@
                         <div class="mt-4">
                             {{ $todos->links() }}
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
