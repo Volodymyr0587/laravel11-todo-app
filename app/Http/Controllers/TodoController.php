@@ -3,18 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\Todo;
+use App\Services\CatsFactsService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
 class TodoController extends Controller
 {
+
+    public function __construct(protected CatsFactsService $catsFacts)
+    {
+
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $todos = auth()->user()->todos()->where('completed', false)->orderBy('created_at', 'desc')->paginate(8);
-        return view('todos.index', compact('todos'));
+        $catsFacts = $this->catsFacts->getRandomCatFact();
+
+        return view('todos.index', compact('todos', 'catsFacts'));
     }
 
     public function completed()
