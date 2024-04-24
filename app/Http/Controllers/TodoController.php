@@ -28,7 +28,7 @@ class TodoController extends Controller
 
     public function completed()
     {
-        $todos = auth()->user()->todos()->where('completed', true)->orderBy('created_at', 'desc')->paginate(2);
+        $todos = auth()->user()->todos()->where('completed', true)->orderBy('created_at', 'desc')->paginate(8);
         return view('todos.completed', compact('todos'));
     }
 

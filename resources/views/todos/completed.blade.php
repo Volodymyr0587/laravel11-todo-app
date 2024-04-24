@@ -9,24 +9,27 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="p-6 text-gray-900">
 
-                <!-- component -->
-                <div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
-                    <div class="p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+                <!-- Section: Design Block -->
+              <section class="mb-32">
+                <div class="flex justify-center">
+                  <div class="max-w-[700px] text-center">
 
-                        <div>
-                            @forelse ($todos as $todo)
-                                <x-todo.completed :todo="$todo" />
-                            @empty
-                                <div class="flex mb-4 items-center">No Completed Todos Yet.</div>
-                            @endforelse
-                        </div>
-                        <div class="mt-4">
-                            {{ $todos->links() }}
-                        </div>
-                    </div>
+
+                  </div>
                 </div>
+
+                <div class="mt-8 grid gap-x-6 md:grid-cols-2 lg:grid-cols-4 xl:gap-x-12">
+                    @forelse ($todos as $todo)
+                        <x-todo.completed :todo="$todo" />
+                    @empty
+                    <div class="flex mb-4 items-center">No Completed Todos Yet.</div>
+                    @endforelse
+                </div>
+                {{ $todos->links() }}
+              </section>
 
             </div>
         </div>
     </div>
 </x-app-layout>
+
