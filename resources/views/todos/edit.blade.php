@@ -18,9 +18,9 @@
                                 <form action="{{ route('todos.update', $todo->id) }}" method="POST">
                                     @csrf
                                     @method('PUT')
-                                    <input type="text" name="description" id="description" value="{{ $todo->description }}"
+                                    <textarea type="text" name="description" id="description" value="{{ $todo->description }}"
                                         class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
-                                        placeholder="Add Todo">
+                                        placeholder="Add Todo">{{ $todo->description }}</textarea>
                                     <div class="flex flex-col mt-2 sm:flex-row sm:justify-center">
                                         <button type="submit"
                                             class="w-full sm:w-auto mb-2 sm:mb-0 select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-yellow-500 hover:bg-yellow-700 text-white shadow-md shadow-yellow-900/10 hover:shadow-lg hover:shadow-yellow-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none">Update</button>

@@ -19,18 +19,23 @@
                 <div class="flex justify-center">
                   <div class="max-w-[700px] text-center">
 
-                    <form class="mb-2 flex flex-row" action="{{ route('todos.store') }}" method="POST">
-                        @csrf
-                        <input type="text" name="description" id="description"
-                            class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
-                            placeholder="Add Todo" value="{{ old('description') }}">
-                        <button type="submit"
-                            class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-yellow-500 hover:bg-yellow-700 text-white shadow-md shadow-yellow-900/10 hover:shadow-lg hover:shadow-yellow-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none">Add</button>
-                    </form>
+                    <div class="flex flex-col">
+                        <form action="{{ route('todos.store') }}" method="POST">
+                            @csrf
+                            <div class="flex flex-col mt-2 sm:flex-col sm:justify-center">
+                                <textarea type="text" name="description" id="description"
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 mb-2 text-grey-darker"
+                                    placeholder="Add Todo" >{{ old('description') }}</textarea>
+                                <button type="submit"
+                                    class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-yellow-500 hover:bg-yellow-700 text-white shadow-md shadow-yellow-900/10 hover:shadow-lg hover:shadow-yellow-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none">Add</button>
+                            </div>
+                        </form>
+                    </div>
 
                     @error('description')
                         <p class="text-sm text-red-500">{{ $message }}</p>
                     @enderror
+
                   </div>
                 </div>
 
