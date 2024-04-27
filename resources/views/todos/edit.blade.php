@@ -20,6 +20,7 @@
                                     @method('PUT')
                                     <textarea type="text" name="description" id="description" value="{{ $todo->description }}"
                                         class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
+                                        cols="33"
                                         placeholder="Add Todo">{{ $todo->description }}</textarea>
                                     <div class="flex flex-col mt-2 sm:flex-row sm:justify-center">
                                         <button type="submit"
